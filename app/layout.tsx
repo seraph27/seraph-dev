@@ -24,7 +24,7 @@ const montserrat = Montserrat({
 })
 
 const ubuntu_mono = Ubuntu_Mono({
-  weight: "400",
+  weight: '400',
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-montserrat',
