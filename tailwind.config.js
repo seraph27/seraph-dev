@@ -22,11 +22,13 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
+        sans: ['var(--font-montserrat)', ...fontFamily.sans],
+        mono: ['var(--ubuntu-mono)', ...fontFamily.mono],
       },
       colors: {
         primary: colors.pink,
         gray: colors.gray,
+        'seraph': '#0E0A0E',
       },
       typography: ({ theme }) => ({
         DEFAULT: {

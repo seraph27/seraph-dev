@@ -1,23 +1,23 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'seraph',
-  author: 'Yi-An Chao',
-  headerTitle: 'seraph blog',
-  description: 'Powered with Next.js and Tailwind.css',
-  language: 'ja',
+  title: 'seraph.dev',
+  author: 'seraph',
+  headerTitle: 'seraph.dev',
+  description: 'Personal blog website 😂',
+  language: 'en-us',
   theme: 'dark', // system, dark or light
   siteUrl: 'https://seraph-dev.vercel.app/',
   siteRepo: 'https://github.com/Seraph27/seraph-dev',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
-  mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'address@yoursite.com',
-  github: 'https://github.com',
-  twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
+  // mastodon: 'https://mastodon.social/@mastodonuser',
+  email: 'ychao@ucsd.edu',
+  github: 'https://github.com/Seraph27',
+  // twitter: 'https://twitter.com/Twitter',
+  // facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com',
-  threads: 'https://www.threads.net',
+  // threads: 'https://www.threads.net',
   instagram: 'https://www.instagram.com',
   locale: 'en-US',
   analytics: {
@@ -42,11 +42,11 @@ const siteMetadata = {
     //   googleAnalyticsId: '', // e.g. G-XXXXXXX
     // },
   },
-  newsletter: {
-    // supports mailchimp, buttondown, convertkit, klaviyo, revue, emailoctopus
-    // Please add your .env file and modify it according to your selection
-    provider: 'buttondown',
-  },
+  // newsletter: {
+  //   // supports mailchimp, buttondown, convertkit, klaviyo, revue, emailoctopus
+  //   // Please add your .env file and modify it according to your selection
+  //   provider: 'buttondown',
+  // },
   comments: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.
@@ -66,13 +66,13 @@ const siteMetadata = {
       metadata: '0',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
-      theme: 'light',
+      theme: 'dark',
       // theme when dark mode
-      darkTheme: 'transparent_dark',
+      darkTheme: 'dark',
       // If the theme option above is set to 'custom`
       // please provide a link below to your custom theme css file.
       // example: https://giscus.app/themes/custom_example.css
-      themeURL: '',
+      themeURL: 'https://giscus.app/themes/custom_example.css',
       // This corresponds to the `data-lang="en"` in giscus's configurations
       lang: 'en',
     },
