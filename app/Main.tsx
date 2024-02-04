@@ -3,7 +3,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import YoutubeEmbed from '@/components/VideoEmbed'
-
+import { AnimatedText } from '@/components/AnimatedText'
 const MAX_DISPLAY = 3
 
 export default function Home({ posts }) {
@@ -12,9 +12,10 @@ export default function Home({ posts }) {
       <div className="divide-y divide-gray-200 dark:divide-indigo-400">
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <h1 className="text-2xl font-extrabold leading-9 text-gray-900 dark:text-indigo-200 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            osu!
           </h1>
-          
+          <div className="py-4">
+            <AnimatedText />
+          </div>
           <div className="justify-center">
             <YoutubeEmbed embedId={'xh6Vd34Js-g'}/>
           </div>   
