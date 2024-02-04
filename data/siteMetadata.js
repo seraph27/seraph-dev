@@ -1,13 +1,13 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Next.js Starter Blog',
-  author: 'Tails Azimuth',
-  headerTitle: 'TailwindBlog',
-  description: 'A blog created with Next.js and Tailwind.css',
-  language: 'en-us',
-  theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  title: 'seraph',
+  author: 'Yi-An Chao',
+  headerTitle: 'seraph blog',
+  description: 'Powered with Next.js and Tailwind.css',
+  language: 'ja',
+  theme: 'dark', // system, dark or light
+  siteUrl: 'https://seraph-dev.vercel.app/',
+  siteRepo: 'https://github.com/Seraph27/seraph-dev',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
   mastodon: 'https://mastodon.social/@mastodonuser',
