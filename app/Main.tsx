@@ -11,9 +11,13 @@ export default function Home({ posts }) {
     <>
       <div className="divide-y divide-gray-200 dark:divide-indigo-400">
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-indigo-200 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            <YoutubeEmbed embedId={'pyV68KvUwlw'}/>
+          <h1 className="text-2xl font-extrabold leading-9 text-gray-900 dark:text-indigo-200 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            osu!
           </h1>
+          
+          <div className="justify-center">
+            <YoutubeEmbed embedId={'xh6Vd34Js-g'}/>
+          </div>   
           <p className="text-lg leading-7 text-gray-500 dark:text-zinc-400">
             {siteMetadata.description}
           </p>
