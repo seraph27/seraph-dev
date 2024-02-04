@@ -1,14 +1,14 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'seraph.dev',
+  title: 'seraph-dev',
   author: 'seraph',
-  headerTitle: 'seraph.dev',
+  headerTitle: 'seraph-dev',
   description: 'Personal blog website 😂',
   language: 'en-us',
   theme: 'dark', // system, dark or light
   siteUrl: 'https://seraph-dev.vercel.app/',
   siteRepo: 'https://github.com/Seraph27/seraph-dev',
-  siteLogo: '/static/images/logo.png',
+  siteLogo: '/public/images/bg.jpg',
   socialBanner: '/static/images/twitter-card.png',
   // mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'ychao@ucsd.edu',
