@@ -12,4 +12,5 @@ export const components: MDXComponents = {
   a: CustomLink,
   pre: Pre,
   table: TableWrapper,
+  BlogNewsletterForm,
 }
