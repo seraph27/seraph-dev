@@ -56,7 +56,7 @@ const MobileNav = () => {
             </svg>
           </button>
         </div>
-        <nav className="fixed mt-8 h-full">
+        <nav classNaze="fixed mt-8 h-full">
           {headerNavLinks.map((link) => (
             <div key={link.title} className="px-12 py-4">
               <Link

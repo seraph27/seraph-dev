@@ -1,3 +1,5 @@
+'use client'
+
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import Logo from '@/data/logo.svg'
@@ -8,20 +10,16 @@ import SearchButton from './SearchButton'
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between py-10">
+    <header className={"fixed max-w-6xl mx-auto flex items-center bg-slate-200 dark:bg-transparent justify-between h-[90px] z-40 inset-1 pr-1 backdrop-blur-sm"}>
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
             <div className="mr-3">
               <Logo />
             </div>
-            {typeof siteMetadata.headerTitle === 'string' ? (
-              <div className="hidden h-6 text-3xl font-semibold sm:block dark:text-purple-200">
-                {siteMetadata.headerTitle}
-              </div>
-            ) : (
-              siteMetadata.headerTitle
-            )}
+            <div className="hidden h-6 text-3xl font-semibold sm:block text-purple-900 dark:text-purple-200">
+              {siteMetadata.headerTitle}
+            </div>
           </div>
         </Link>
       </div>
@@ -39,7 +37,6 @@ const Header = () => {
           ))}
         <SearchButton />
         <ThemeSwitch />
-        <MobileNav />
       </div>
     </header>
   )

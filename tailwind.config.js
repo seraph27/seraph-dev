@@ -28,7 +28,18 @@ module.exports = {
       colors: {
         primary: colors.pink,
         gray: colors.gray,
-        'seraph': '#0E0A0E',
+        'seraph': '#010002',
+        'seraph2': {
+          100: '#060108',
+          200: '#0B0B0A',
+          300: '#070512',
+          400: '#22d3ee',
+          500: '#06b6d4',
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
+        }
       },
       typography: ({ theme }) => ({
         DEFAULT: {
