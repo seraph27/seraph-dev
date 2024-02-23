@@ -8,11 +8,11 @@ export function AnimatedText() {
     useEffect(() => {
       const options = {
         strings: [
-          'Hello! Welcome to seraph.dev! 🦞',
-          '🥶 watch me click circles 💀',
+          '🦞　Welcome to seraph.dev! 🦞',
+          '．．．．．．．．．．．．．．．．．．．．．．．．．．．．．．．．．．',
           '☄️ Powered by Next.js and Tailwind CSS ☄️ ',
-          'I like gaming and food 😎',
-          '🔥 Fpeng kitten 🔥'
+          '✨思い出せないと泣くくらいなら，ただ僕らを包めよ夏霞，さよならが痛いのは知っていた✨',
+          '🔥 Fpeng kitten にゃん 🔥'
         ],
         typeSpeed: 37,
         backSpeed: 10,

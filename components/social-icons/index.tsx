@@ -8,6 +8,8 @@ import {
   Mastodon,
   Threads,
   Instagram,
+  ACM,
+  Discord,
 } from './icons'
 
 const components = {
@@ -20,6 +22,8 @@ const components = {
   mastodon: Mastodon,
   threads: Threads,
   instagram: Instagram,
+  acm: ACM,
+  discord: Discord,
 }
 
 type SocialIconProps = {

@@ -4,24 +4,25 @@ import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import YoutubeEmbed from '@/components/VideoEmbed'
 import { AnimatedText } from '@/components/AnimatedText'
-const MAX_DISPLAY = 3
+const MAX_DISPLAY = 4
 
 export default function Home({ posts }) {
   return (
     <>
-      <div className="divide-y divide-gray-200 dark:divide-indigo-400">
+      <div className="divide-y divide-gray-200 dark:divide-indigo-900">
         <div className="space-y-2 pb-8 pt-40 md:space-y-5">
           <h1 className="text-2xl font-extrabold leading-9 text-gray-900 dark:text-indigo-200 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
           </h1>
           <div className="pb-4">
             <AnimatedText />
           </div>
-          <span><YoutubeEmbed embedId={'xh6Vd34Js-g'}/></span>
-          <p className="text-xl leading-7 text-gray-500 dark:text-zinc-400">
+          {/* <span><YoutubeEmbed embedId={'xh6Vd34Js-g'}/></span> */}
+          {/* <p className="text-xl leading-7 text-gray-500 dark:text-zinc-400">
             {siteMetadata.description}
-          </p>
+          </p> */}
+          {/* <iframe src="https://plicy.net/GameEmbed/155561" width="900" height="450">漢字でGO!</iframe> */} 
         </div>
-        <ul className="divide-y divide-gray-200 dark:divide-indigo-400">
+        <ul className="divide-y divide-gray-200 dark:divide-indigo-900">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags } = post
