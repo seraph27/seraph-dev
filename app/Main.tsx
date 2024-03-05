@@ -79,7 +79,7 @@ export default function Home({ posts }) {
         <img
           className="mx-auto h-auto transition-all duration-1000 rounded-lg cursor-pointer filter grayscale hover:grayscale-0"
           src="/static/images/bg2.png"
-          alt="image description"
+          alt="description"
         />
       </div>
 
