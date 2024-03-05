@@ -74,6 +74,15 @@ export default function Home({ posts }) {
           })}
         </ul>
       </div>
+      {/* end of blog posts */}
+      <div>
+        <img
+          className="mx-auto h-auto transition-all duration-1000 rounded-lg cursor-pointer filter grayscale hover:grayscale-0"
+          src="/static/images/bg2.png"
+          alt="image description"
+        />
+      </div>
+
       {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
