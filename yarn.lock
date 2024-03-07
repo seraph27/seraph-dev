@@ -4163,6 +4163,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"class-variance-authority@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "class-variance-authority@npm:0.7.0"
+  dependencies:
+    clsx: 2.0.0
+  checksum: e7fd1fab433ef06f52a1b7b241b70b4a185864deef199d3b0a2c3412f1cc179517288264c383f3b971a00d76811625fc8f7ffe709e6170219e88cd7368f08a20
+  languageName: node
+  linkType: hard
+
 "clean-css@npm:^5.0.0":
   version: 5.3.3
   resolution: "clean-css@npm:5.3.3"
@@ -4235,6 +4244,13 @@ __metadata:
     strip-ansi: ^6.0.1
     wrap-ansi: ^7.0.0
   checksum: 79648b3b0045f2e285b76fb2e24e207c6db44323581e421c3acbd0e86454cba1b37aea976ab50195a49e7384b871e6dfb2247ad7dec53c02454ac6497394cb56
+  languageName: node
+  linkType: hard
+
+"clsx@npm:2.0.0":
+  version: 2.0.0
+  resolution: "clsx@npm:2.0.0"
+  checksum: a2cfb2351b254611acf92faa0daf15220f4cd648bdf96ce369d729813b85336993871a4bf6978ddea2b81b5a130478339c20d9d0b5c6fc287e5147f0c059276e
   languageName: node
   linkType: hard
 
@@ -7384,6 +7400,15 @@ __metadata:
   dependencies:
     yallist: ^4.0.0
   checksum: f97f499f898f23e4585742138a22f22526254fdba6d75d41a1c2526b3b6cc5747ef59c5612ba7375f42aca4f8461950e925ba08c991ead0651b4918b7c978297
+  languageName: node
+  linkType: hard
+
+"lucide-react@npm:^0.349.0":
+  version: 0.349.0
+  resolution: "lucide-react@npm:0.349.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0
+  checksum: e9b88f33ae0b75ded7808223ae65b9b522fd805338e767d9ef6c9fc93cc6ce23b451221d884a1bb0d6f8d7ece3e046312f9e60f79f133d0410a9b4d4e8b4a03b
   languageName: node
   linkType: hard
 
@@ -10795,6 +10820,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^6.1.0
     "@typescript-eslint/parser": ^6.1.0
     autoprefixer: ^10.4.13
+    class-variance-authority: ^0.7.0
     clsx: ^2.1.0
     contentlayer: 0.3.4
     cross-env: ^7.0.3
@@ -10808,6 +10834,7 @@ __metadata:
     husky: ^8.0.0
     image-size: 1.0.0
     lint-staged: ^13.0.0
+    lucide-react: ^0.349.0
     next: 14.1.0
     next-contentlayer: 0.3.4
     next-themes: ^0.2.1
@@ -10829,11 +10856,21 @@ __metadata:
     remark-math: ^5.1.1
     tailwind-merge: ^2.2.1
     tailwindcss: ^3.4.1
+    tailwindcss-animate: ^1.0.7
     typed.js: ^2.1.0
     typescript: ^5.1.3
     unist-util-visit: ^4.1.0
   languageName: unknown
   linkType: soft
+
+"tailwindcss-animate@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "tailwindcss-animate@npm:1.0.7"
+  peerDependencies:
+    tailwindcss: "*"
+  checksum: c1760983eb3fec0c8421e95082bf308e6845df43e2f90862386366e82545c801b26b4d189c4cd23d6915252b76d18005c8e5f591f8b119944c7fb8650d0f8bce
+  languageName: node
+  linkType: hard
 
 "tailwindcss@npm:^3.4.1":
   version: 3.4.1
