@@ -7,17 +7,17 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'Blue coder by end of 2024',
-    description: `Goal for competitive programming this year get blue rating`,
+    title: 'Codeforces: Blue coder by end of 2024',
+    description: `The grind continues`,
     imgSrc: '/static/images/cp/profile.png',
-    href: 'https://codeforces.com/profile/shiinamashiro_',
+    href: './codeforces',
   },
-  {
-    title: 'osu! goal ',
-    description: `Trying to get 3 digit in osu! at some point`,
-    imgSrc: '/static/images/osu/profile.png',
-    href: 'https://osu.ppy.sh/users/13370667',
-  },
+  // {
+  //   title: 'osu! goal ',
+  //   description: `Trying to get 3 digit in osu! at some point`,
+  //   imgSrc: '/static/images/osu/profile.png',
+  //   href: 'https://osu.ppy.sh/users/13370667',
+  // },
 ]
 
 export default projectsData

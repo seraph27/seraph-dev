@@ -10,7 +10,7 @@ import SearchButton from './SearchButton'
 
 const Header = () => {
   return (
-    <header className={"fixed max-w-6xl mx-auto flex items-center bg-slate-200 dark:bg-transparent justify-between h-[90px] z-40 inset-1 pr-1 backdrop-blur-sm"}>
+    <header className={"fixed max-w-5xl mx-auto -mt-1 max-h-20 flex items-center bg-slate-200 dark:bg-transparent justify-between z-40 inset-1 pr-1 backdrop-blur-sm"}>
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
