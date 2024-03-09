@@ -1,3 +1,4 @@
+"use client"
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
@@ -5,18 +6,30 @@ import { formatDate } from 'pliny/utils/formatDate'
 import YoutubeEmbed from '@/components/VideoEmbed'
 import { AnimatedText } from '@/components/AnimatedText'
 import { Button } from "@/components/shadcn/button"
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Snowfall from 'react-snowfall'
+
 const MAX_DISPLAY = 4
 
 export default function Home({ posts }) {
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-indigo-900">
+        <Snowfall
+          snowflakeCount={234}
+          radius={[0.5, 1]}
+          wind={[0.5, 1.5]}     
+          speed={[.5, 1.5]}  
+          style={{
+            position: 'fixed',
+            width: '100vw',
+            height: '100vh',
+          }}
+        />
         <div className="space-y-2 pb-8 pt-40 md:space-y-5">
           <h1 className="text-2xl font-extrabold leading-9 text-gray-900 dark:text-indigo-200 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
           </h1>
-          <div>
-            <Button>Click me</Button>
-          </div>
           <div className="pb-4">
             <AnimatedText />
           </div>
