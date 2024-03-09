@@ -17,7 +17,7 @@ export default function Home({ posts }) {
     <>
       <div className="divide-y divide-gray-200 dark:divide-indigo-900">
         <Snowfall
-          snowflakeCount={234}
+          snowflakeCount={150}
           radius={[0.5, 1]}
           wind={[0.5, 1.5]}     
           speed={[.5, 1.5]}  
