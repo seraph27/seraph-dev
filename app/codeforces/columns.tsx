@@ -24,7 +24,7 @@ export type Problem = {
   url: string
 }
 export function getStatusColor(solved: boolean) {
-    return solved ? "text-green-400": "text-red-400";
+    return solved ? "text-green-700 dark:text-green-400": "text-red-700 dark:text-red-400";
 }
 
 export const columns: ColumnDef<Problem>[] = [

@@ -18,9 +18,14 @@ async function getData(): Promise<Problem[]> {
 export default async function DemoPage() {
   const data = await getData()
 
-  return (
+  return (  
     <div className="pt-40 container mx-auto py-10">
-      <DataTable columns={columns} data={data} />
+      <div className="divide-y divide-dashed divide-indigo-600 dark:divide-zinc-600 dark:text-zinc-300">
+        <p>This is a table of my latest solved problems on sites like codeforces, cses, atcoder and more!</p>
+      </div>
+      <div >
+        <DataTable columns={columns} data={data} />
+      </div>
     </div>
   )
 }

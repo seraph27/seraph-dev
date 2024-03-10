@@ -9,6 +9,14 @@ type CodeForcesData = {
 
 const codeforcesData: CodeForcesData[] = [
 	{
+		id: "0000010",
+		solved: true,
+		date: "2024/3/9",
+		difficulty: 0,
+		problems: "Coin Combinations II",
+		url: "https://cses.fi/problemset/task/1636",
+	},
+	{
 		id: "0000009",
 		solved: true,
 		date: "2024/3/8",

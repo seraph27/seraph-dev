@@ -15,12 +15,13 @@ const MAX_DISPLAY = 4
 export default function Home({ posts }) {
   return (
     <>
-      <div className="divide-y divide-gray-200 dark:divide-indigo-900">
+      <div className="divide-y divide-dashed divide-indigo-600 dark:divide-zinc-600 ">
         <Snowfall
           snowflakeCount={150}
           radius={[0.5, 1]}
           wind={[0.5, 1.5]}     
           speed={[.5, 1.5]}  
+          color='#C9C1E6'
           style={{
             position: 'fixed',
             width: '100vw',
@@ -39,7 +40,7 @@ export default function Home({ posts }) {
           </p> */}
           {/* <iframe src="https://plicy.net/GameEmbed/155561" width="900" height="450">漢字でGO!</iframe> */} 
         </div>
-        <ul className="divide-y divide-gray-200 dark:divide-indigo-900">
+        <ul className="divide-y divide-dashed divide-indigo-600 dark:divide-zinc-600">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags } = post
