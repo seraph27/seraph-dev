@@ -8,8 +8,8 @@ const siteMetadata = {
   theme: 'dark', // system, dark or light
   siteUrl: 'https://seraph-dev.vercel.app/',
   siteRepo: 'https://github.com/Seraph27/seraph-dev',
-  siteLogo: '/public/images/logo.jpg',
-  socialBanner: '/public/images/logo.jpg',
+  siteLogo: '/static/images/logo.jpg',
+  socialBanner: '/static/images/logo.jpg',
   // mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'ychao@ucsd.edu',
   github: 'https://github.com/Seraph27',

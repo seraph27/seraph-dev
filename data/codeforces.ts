@@ -9,6 +9,22 @@ type CodeForcesData = {
 
 const codeforcesData: CodeForcesData[] = [
 	{
+		id: "0000012",
+		solved: true,
+		date: "2024/3/13",
+		difficulty: 1700,
+		problems: "Checkposts (427C)",
+		url: "https://codeforces.com/contest/427/problem/C",
+	},
+	{
+		id: "0000011",
+		solved: true,
+		date: "2024/3/12",
+		difficulty: 0,
+		problems: "Longest Cycle in a Graph",
+		url: "https://leetcode.com/problems/longest-cycle-in-a-graph/description/",
+	},
+	{
 		id: "0000010",
 		solved: true,
 		date: "2024/3/9",
