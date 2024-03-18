@@ -11,6 +11,7 @@ async function getData(): Promise<Problem[]> {
       problems: problem.problems,
       difficulty: problem.difficulty,
       url: problem.url,
+      resources: problem.resources,
     };
   });
 }

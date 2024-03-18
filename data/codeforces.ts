@@ -4,7 +4,8 @@ type CodeForcesData = {
 	date: string,
 	difficulty: number,
 	problems: string,
-	url: string
+	url: string,
+	resources: string,
 };
 
 const codeforcesData: CodeForcesData[] = [
@@ -15,6 +16,7 @@ const codeforcesData: CodeForcesData[] = [
 		difficulty: 1700,
 		problems: "Checkposts (427C)",
 		url: "https://codeforces.com/contest/427/problem/C",
+		resources: "Codeforces",
 	},
 	{
 		id: "0000011",
@@ -23,6 +25,7 @@ const codeforcesData: CodeForcesData[] = [
 		difficulty: 0,
 		problems: "Longest Cycle in a Graph",
 		url: "https://leetcode.com/problems/longest-cycle-in-a-graph/description/",
+		resources: "Leetcode",
 	},
 	{
 		id: "0000010",
@@ -31,6 +34,7 @@ const codeforcesData: CodeForcesData[] = [
 		difficulty: 0,
 		problems: "Coin Combinations II",
 		url: "https://cses.fi/problemset/task/1636",
+		resources: "CSES",
 	},
 	{
 		id: "0000009",
@@ -39,6 +43,7 @@ const codeforcesData: CodeForcesData[] = [
 		difficulty: 1400,
 		problems: "Torn Lucky Ticket (1895B)",
 		url: "https://codeforces.com/contest/1895/problem/C",
+		resources: "Codeforces",
 	},
 	{
 		id: "0000008",
@@ -46,7 +51,8 @@ const codeforcesData: CodeForcesData[] = [
 		date: "2024/3/6",
 		difficulty: 1400,
 		problems: "Add, Divide and Floor (1901C)",
-		url: "https://codeforces.com/contest/1901/problem/C"
+		url: "https://codeforces.com/contest/1901/problem/C",
+		resources: "Codeforces",
 	},
 	{
 		id: "0000007",
@@ -54,7 +60,8 @@ const codeforcesData: CodeForcesData[] = [
 		date: "2024/3/5",
 		difficulty: 1300,
 		problems: "Insert and Equalize (1902C)",
-		url: "https://codeforces.com/contest/1902/problem/C"
+		url: "https://codeforces.com/contest/1902/problem/C",
+		resources: "Codeforces",
 	},
 	{
 		id: "0000006",
@@ -62,7 +69,8 @@ const codeforcesData: CodeForcesData[] = [
 		date: "2024/3/4",
 		difficulty: 1300,
 		problems: "Closest Cities (1922C)",
-		url: "https://codeforces.com/contest/1922/problem/C"
+		url: "https://codeforces.com/contest/1922/problem/C",
+		resources: "Codeforces",
 	},
 	{
 		id: "0000005",
@@ -70,7 +78,8 @@ const codeforcesData: CodeForcesData[] = [
 		date: "2024/3/4",
 		difficulty: 1300,
 		problems: "Game with Multiset (1913C)",
-		url: "https://codeforces.com/contest/1913/problem/C"
+		url: "https://codeforces.com/contest/1913/problem/C",
+		resources: "Codeforces",
 	},
 	{
 		id: "0000004",
@@ -78,7 +87,8 @@ const codeforcesData: CodeForcesData[] = [
 		date: "2024/3/2",
 		difficulty: 1200,
 		problems: "Forming Triangles (1922B)",
-		url: "https://codeforces.com/contest/1922/problem/B"
+		url: "https://codeforces.com/contest/1922/problem/B",
+		resources: "Codeforces",
 	},
 	{
 		id: "0000003",
@@ -86,7 +96,8 @@ const codeforcesData: CodeForcesData[] = [
 		date: "2024/3/1",
 		difficulty: 1600,
 		problems: "Pho Restaurant (1938H)",
-		url: "https://codeforces.com/problemset/problem/1938/H"
+		url: "https://codeforces.com/problemset/problem/1938/H",
+		resources: "Codeforces",
 	},
 	{
 		id: "0000002",
@@ -94,7 +105,8 @@ const codeforcesData: CodeForcesData[] = [
 		date: "2024/2/29",
 		difficulty: 0,
 		problems: "Movie Festival II",
-		url: "https://cses.fi/problemset/task/1632"
+		url: "https://cses.fi/problemset/task/1632",
+		resources: "CSES",
 	},
 	{
 		id: "0000001",
@@ -102,7 +114,8 @@ const codeforcesData: CodeForcesData[] = [
 		date: "2024/2/29",
 		difficulty: 0,
 		problems: "Even Odd Tree (LC 1609)",
-		url: "https://leetcode.com/problems/even-odd-tree/description/"
+		url: "https://leetcode.com/problems/even-odd-tree/description/",
+		resources: "Leetcode",
 	}
 ]
 

@@ -22,6 +22,7 @@ export type Problem = {
   problems: string
   difficulty: number
   url: string
+  resources: string
 }
 export function getStatusColor(solved: boolean) {
     return solved ? "text-green-700 dark:text-green-400": "text-red-700 dark:text-red-400";
@@ -75,6 +76,23 @@ export const columns: ColumnDef<Problem>[] = [
             <ArrowUpDown className="ml-2 h-4 w-4" />
             </Button>
         )
+    },
+  },
+  {
+    accessorKey: "resources",
+    header: ({ column }) => {
+      	return (
+        	<Button
+			variant="ghost"
+			onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+			>
+			Resources
+			<ArrowUpDown className="ml-2 h-4 w-4" />
+			</Button>
+  		)
+	},
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id))
     },
   },
   {

@@ -1,7 +1,6 @@
 "use client"
-import { Button } from "@/components/shadcn/button"
-import { Input } from "@/components/shadcn/input"
 import { DataTablePagination } from "./pagination"
+import { DataTableToolbar } from "./data-table-toolbar"
 import * as React from "react"
 
 import {
@@ -56,14 +55,7 @@ export function DataTable<TData, TValue>({
   return (
     <div>
       <div className="flex items-center py-4">
-        <Input
-          placeholder="Filter problems..."
-          value={(table.getColumn("problems")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("problems")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
-        />
+        <DataTableToolbar table={table} />
       </div>
       <div className="rounded-md border border-zinc-800 dark:border-zinc-500">
         <Table>
