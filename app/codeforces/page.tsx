@@ -21,8 +21,9 @@ export default async function DemoPage() {
 
   return (  
     <div className="pt-40 container mx-auto py-10 space-y-4">
-      <div className="divide-y divide-dashed divide-indigo-600 dark:divide-zinc-600 dark:text-zinc-300">
+      <div className="dark:text-zinc-300">
         <p>This is a table of my latest solved problems on sites like codeforces, cses, atcoder and more!</p>
+        <p>This is not a comprehensive list, I only pick quality problems that helped me learn or review a concept.</p>  
       </div>
       <div >
         <DataTable columns={columns} data={data} />
