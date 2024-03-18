@@ -20,7 +20,7 @@ export default async function DemoPage() {
   const data = await getData()
 
   return (  
-    <div className="pt-40 container mx-auto py-10">
+    <div className="pt-40 container mx-auto py-10 space-y-4">
       <div className="divide-y divide-dashed divide-indigo-600 dark:divide-zinc-600 dark:text-zinc-300">
         <p>This is a table of my latest solved problems on sites like codeforces, cses, atcoder and more!</p>
       </div>

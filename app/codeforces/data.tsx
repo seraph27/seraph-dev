@@ -8,27 +8,27 @@ import {
   
   export const resources = [
     {
-      value: "leetcode",
+      value: "Leetcode",
       label: "Leetcode",
       icon: PaperPlaneIcon,
     },
     {
-      value: "codeforces",
+      value: "Codeforces",
       label: "Codeforces",
       icon: RocketIcon,
     },
     {
-      value: "cses",
+      value: "CSES",
       label: "CSES",
       icon: DrawingPinFilledIcon,
     },
     {
-      value: "atcoder",
+      value: "AtCoder",
       label: "AtCoder",
       icon: LightningBoltIcon,
     },
     {
-      value: "usaco",
+      value: "USACO",
       label: "USACO",
       icon: HobbyKnifeIcon,
     },

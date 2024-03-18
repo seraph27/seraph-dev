@@ -81,12 +81,13 @@ export function DataTableFacetedFilter<TData, TValue>({
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0" align="start">
         <Command>
-          <CommandInput placeholder={title} />
+          <CommandInput placeholder="Filter..." />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup>
               {options.map((option) => {
                 const isSelected = selectedValues.has(option.value)
+                console.debug(isSelected);
                 return (
                   <CommandItem
                     key={option.value}
@@ -106,7 +107,7 @@ export function DataTableFacetedFilter<TData, TValue>({
                       className={cn(
                         "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-zinc-100",
                         isSelected
-                          ? "bg-red-100 text-green-200"
+                          ? "bg-zinc-100 text-zinc-900"
                           : "opacity-50 [&_svg]:invisible"
                       )}
                     >
