@@ -87,7 +87,6 @@ export function DataTableFacetedFilter<TData, TValue>({
             <CommandGroup>
               {options.map((option) => {
                 const isSelected = selectedValues.has(option.value)
-                console.debug(isSelected);
                 return (
                   <CommandItem
                     key={option.value}
