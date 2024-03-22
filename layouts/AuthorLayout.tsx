@@ -2,6 +2,9 @@ import { ReactNode } from 'react'
 import type { Authors } from 'contentlayer/generated'
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
+import { Button } from '@/components/shadcn/button'
+import { Scroll, ScrollText } from 'lucide-react'
+import Link from 'next/link'
 
 interface Props {
   children: ReactNode
@@ -9,7 +12,7 @@ interface Props {
 }
 
 export default function AuthorLayout({ children, content }: Props) {
-  const { name, avatar, occupation, company, selfie, email, twitter, linkedin, discord } = content 
+  const { name, avatar, occupation, company, selfie, email, twitter, linkedin, discord } = content
   //remember to go to contentlayer.config.ts to add path or it will complain
 
   return (
@@ -21,51 +24,82 @@ export default function AuthorLayout({ children, content }: Props) {
           </h1>
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-4 xl:gap-x-8 xl:space-y-0">
-          <div className="flex items-center text-wrap flex-col">
-            <h3 className="pb-8 pt-10 text-3xl font-bold leading-8 tracking-tight text-gray-700 dark:text-teal-200">{name}</h3>
+          <div className="flex flex-col items-center text-wrap">
+            <h3 className="pb-8 pt-10 text-3xl font-bold leading-8 tracking-tight text-gray-700 dark:text-teal-200">
+              {name}
+            </h3>
             <div className="space-x-2 pb-8">
-            {selfie && (
-              <Image
-                src={selfie}
-                alt="selfie"
-                width={500}
-                height={500}
-                className="h-40 w-40 rounded-full"
-              />
-            )}
-            </div>  
-            <div className="flex flex-wrap justify-center space-y-1">        
-              <span className="mt-1 bg-indigo-200 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-teal-900 dark:text-indigo-200">seraph.dev developer</span>
-              <span className="bg-indigo-200 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-teal-900 dark:text-indigo-200">{occupation} @ {company}</span>
-            </div>     
+              {selfie && (
+                <Image
+                  src={selfie}
+                  alt="selfie"
+                  width={500}
+                  height={500}
+                  className="h-40 w-40 rounded-full"
+                />
+              )}
+            </div>
+            <div className="flex flex-wrap justify-center space-y-1">
+              <span className="me-2 mt-1 rounded bg-indigo-200 px-2.5 py-0.5 text-xs font-medium text-indigo-800 dark:bg-teal-900 dark:text-indigo-200">
+                seraph.dev developer
+              </span>
+              <span className="me-2 rounded bg-indigo-200 px-2.5 py-0.5 text-xs font-medium text-indigo-800 dark:bg-teal-900 dark:text-indigo-200">
+                {occupation} @ {company}
+              </span>
+            </div>
             {/* <div className="flex items-center space-x-3 pt-6">
               <SocialIcon kind="mail" href={`mailto:${email}`} />
               <SocialIcon kind="discord" href={`username:${discord}`} />
               <SocialIcon kind="linkedin" href={linkedin} />
               <SocialIcon kind="twitter" href={twitter} />
             </div> */}
-          </div>          
+          </div>
           {/* text */}
           <div className="prose max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2">
             {children}
           </div>
           <div className="flex flex-col items-center pt-10">
-            <h3 className="pb-8 text-3xl font-bold leading-8 tracking-tight text-gray-700 dark:text-indigo-200">Skills</h3>
+            <h3 className="pb-8 text-3xl font-bold leading-8 tracking-tight text-gray-700 dark:text-indigo-200">
+              Skills
+            </h3>
             <div className="flex flex-wrap justify-center space-y-1">
-              <span className="mt-1 bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">C++</span>
-              <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Python</span>
-              <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">Next.js</span>
-              <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300">React</span>
-              <span className="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400">Tailwind CSS</span>
-              <span className="bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-purple-400 border border-purple-400">Linux</span>
-              <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-pink-400 border border-pink-400">C#</span>
-              <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">.NET</span>
-              <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Typescript</span>
-              <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">Git</span>
-              {/* <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300">React</span>
-              <span className="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400">Tailwind CSS</span>
-              <span className="bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-purple-400 border border-purple-400">Purple</span>
-              <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-pink-400 border border-pink-400">C#</span> */}
+              <span className="me-2 mt-1 rounded border border-blue-400 bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-gray-700 dark:text-blue-400">
+                C++
+              </span>
+              <span className="me-2 rounded border border-red-400 bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-gray-700 dark:text-red-400">
+                Python
+              </span>
+              <span className="me-2 rounded border border-green-400 bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-gray-700 dark:text-green-400">
+                Next.js
+              </span>
+              <span className="me-2 rounded border border-yellow-300 bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800 dark:bg-gray-700 dark:text-yellow-300">
+                React
+              </span>
+              <span className="me-2 rounded border border-indigo-400 bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-800 dark:bg-gray-700 dark:text-indigo-400">
+                Tailwind CSS
+              </span>
+              <span className="me-2 rounded border border-purple-400 bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800 dark:bg-gray-700 dark:text-purple-400">
+                Linux
+              </span>
+              <span className="me-2 rounded border border-pink-400 bg-pink-100 px-2.5 py-0.5 text-xs font-medium text-pink-800 dark:bg-gray-700 dark:text-pink-400">
+                C#
+              </span>
+              <span className="me-2 rounded border border-blue-400 bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-gray-700 dark:text-blue-400">
+                .NET
+              </span>
+              <span className="me-2 rounded border border-red-400 bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-gray-700 dark:text-red-400">
+                Typescript
+              </span>
+              <span className="me-2 rounded border border-green-400 bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-gray-700 dark:text-green-400">
+                Git
+              </span>
+            </div>
+            <div className="mt-10 flex flex-wrap justify-center">
+              <Button asChild variant="outline">
+                <Link href="https://emerald-vannie-95.tiiny.site/">
+                  <ScrollText className="mr-2 h-4 w-4" /> Download my resume!
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
