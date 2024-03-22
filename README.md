@@ -10,7 +10,7 @@
 
 This is a website written using  [Next.js](https://nextjs.org/) & [Tailwind CSS](https://tailwindcss.com/). 
 
-Built upon [timlrx's template](https://github.com/timlrx/tailwind-nextjs-starter-blog/?tab=readme-ov-file) blogging starter template. 
+Inspired and built upon [timlrx's template](https://github.com/timlrx/tailwind-nextjs-starter-blog/?tab=readme-ov-file) template. 
 
 ```c++
 cout << "hello" << "\n;
