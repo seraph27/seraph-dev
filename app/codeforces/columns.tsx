@@ -1,9 +1,9 @@
-"use client"
-import { ColumnDef } from "@tanstack/react-table"
-import { ArrowUpDown, MoreHorizontal } from "lucide-react"
-import { Button } from "@/components/shadcn/button"
-import { Checkbox } from "@/components/shadcn/checkbox"
-import { resources } from "./data"
+'use client'
+import { ColumnDef } from '@tanstack/react-table'
+import { ArrowUpDown, MoreHorizontal } from 'lucide-react'
+import { Button } from '@/components/shadcn/button'
+import { Checkbox } from '@/components/shadcn/checkbox'
+import { resources } from './data'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,9 +11,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/shadcn/dropdown-menu"
+} from '@/components/shadcn/dropdown-menu'
 
-import { cn } from "@/scripts/utils"
+import { cn } from '@/scripts/utils'
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -28,17 +28,16 @@ export type Problem = {
 }
 
 export function getStatusColor(solved: boolean) {
-    return solved ? "text-green-700 dark:text-green-400": "text-red-700 dark:text-red-400";
+  return solved ? 'text-green-700 dark:text-green-400' : 'text-red-700 dark:text-red-400'
 }
 
 export const columns: ColumnDef<Problem>[] = [
   {
-    id: "select",
+    id: 'select',
     header: ({ table }) => (
       <Checkbox
         checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
+          table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate')
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
@@ -57,76 +56,74 @@ export const columns: ColumnDef<Problem>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: "date",
+    accessorKey: 'date',
     header: ({ column }) => {
-        return (
-            <Button
-            variant="ghost"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-            >
-            Date
-            <ArrowUpDown className="ml-2 h-4 w-4" />
-            </Button>
-        )
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          Date
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
     },
   },
   {
-    accessorKey: "problems",
+    accessorKey: 'problems',
     header: ({ column }) => {
-        return (
-            <Button
-            variant="ghost"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-            >
-            Problems
-            <ArrowUpDown className="ml-2 h-4 w-4" />
-            </Button>
-        )
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          Problems
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
     },
-    cell: ({row}) => {
-        const problem = row.original;
-        const color = getStatusColor(problem.solved);
-        return (
-            <div className={color}>{problem.problems}</div>
-        );
-    }
-  },
-  {
-    accessorKey: "difficulty",
-    header: ({ column }) => {
-        return (
-            <Button
-            variant="ghost"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-            >
-            Difficulty
-            <ArrowUpDown className="ml-2 h-4 w-4" />
-            </Button>
-        )
+    cell: ({ row }) => {
+      const problem = row.original
+      const color = getStatusColor(problem.solved)
+      return <div className={color}>{problem.problems}</div>
     },
   },
   {
-    accessorKey: "resources",
+    accessorKey: 'difficulty',
     header: ({ column }) => {
-      	return (
-        	<Button
-			variant="ghost"
-			onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-			>
-			Resources
-			<ArrowUpDown className="ml-2 h-4 w-4" />
-			</Button>
-  		)
-	  },
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          Difficulty
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
+  },
+  {
+    accessorKey: 'resources',
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          Resources
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
     filterFn: (row, id, value) => {
       return value.includes(row.getValue(id))
     },
   },
   {
-    id: "actions",
+    id: 'actions',
     cell: ({ row }) => {
       const problem = row.original
- 
+
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

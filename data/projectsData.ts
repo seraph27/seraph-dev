@@ -8,16 +8,16 @@ interface Project {
 const projectsData: Project[] = [
   {
     title: 'Codeforces: Blue coder by end of 2024',
-    description: `The grind continues`,
+    description: `Still far away but on the grind`,
     imgSrc: '/static/images/cp/profile.png',
     href: './codeforces',
   },
-  // {
-  //   title: 'osu! goal ',
-  //   description: `Trying to get 3 digit in osu! at some point`,
-  //   imgSrc: '/static/images/osu/profile.png',
-  //   href: 'https://osu.ppy.sh/users/13370667',
-  // },
+  {
+    title: 'Wingtone',
+    description: `Revamping an old website for the wingtone company (In progress)`,
+    imgSrc: '/static/images/cp/wingtone.png',
+    href: 'https://wingtone.vercel.app/',
+  },
 ]
 
 export default projectsData
