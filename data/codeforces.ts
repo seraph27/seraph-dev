@@ -10,8 +10,35 @@ type CodeForcesData = {
 
 const codeforcesData: CodeForcesData[] = [
   {
-    id: '0000020',
+    id: '0000023',
     solved: false,
+    date: '2024/3/23',
+    difficulty: 944,
+    problems: 'Square Pair',
+    url: 'https://atcoder.jp/contests/abc342/tasks/abc342_d',
+    resources: 'AtCoder',
+  },
+  {
+    id: '0000022',
+    solved: true,
+    date: '2024/3/23',
+    difficulty: 845,
+    problems: 'D - Gomamayo Sequence',
+    url: 'https://atcoder.jp/contests/abc346/tasks/abc346_d',
+    resources: 'AtCoder',
+  },
+  {
+    id: '0000021',
+    solved: true,
+    date: '2024/3/22',
+    difficulty: 422,
+    problems: 'Diversity of Scores',
+    url: 'https://atcoder.jp/contests/abc343/tasks/abc343_d',
+    resources: 'AtCoder',
+  },
+  {
+    id: '0000020',
+    solved: true,
     date: '2024/3/21',
     difficulty: 1645,
     problems: '#(subset sum = K) with Add and Erase',

@@ -30,8 +30,8 @@ module.exports = {
         gray: colors.gray,
         'seraph': '#010002',
         'seraph2': {
-          100: '#060108',
-          200: '#0B0B0A',
+          100: '#08080C', //vampire black
+          200: '#140029',
           300: '#070512',
           400: '#22d3ee',
           500: '#06b6d4',
