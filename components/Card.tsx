@@ -24,7 +24,7 @@ const Card = ({
     >
       {imgSrc &&
         (href ? (
-          <HoverCard>
+          <HoverCard openDelay={150} closeDelay={250}>
             <HoverCardTrigger>
               <Image
                 alt={title}
