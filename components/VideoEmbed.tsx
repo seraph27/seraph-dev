@@ -1,12 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 const YoutubeEmbed = ({ embedId }) => {
-
   return (
-    <div className="youtube-mdx-embed relative my-6 w-full" style={{paddingTop: '56.25%'}}>
+    <div className="youtube-mdx-embed relative my-6 w-full" style={{ paddingTop: '56.25%' }}>
       <iframe
         style={{
-          position: 'absolute', 
+          position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
@@ -18,7 +17,7 @@ const YoutubeEmbed = ({ embedId }) => {
         title="Embedded youtube"
       />
     </div>
-  );
+  )
 }
 
-export default YoutubeEmbed;
+export default YoutubeEmbed

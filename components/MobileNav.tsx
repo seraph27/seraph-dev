@@ -3,34 +3,22 @@
 import Link from './Link'
 import { CupSoda, Menu } from 'lucide-react'
 import { Button } from './shadcn/button'
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/shadcn/sheet"
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/shadcn/sheet'
 
 const MobileNav = () => {
   return (
     <>
       <Sheet>
         <SheetTrigger asChild>
-          <Button
-              variant="outline"
-              size="icon"
-              className="shrink-0 md:hidden"
-            >
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle navigation menu</span>
-            </Button>
+          <Button variant="outline" size="icon" className="shrink-0 md:hidden">
+            <Menu className="h-5 w-5" />
+            <span className="sr-only">Toggle navigation menu</span>
+          </Button>
         </SheetTrigger>
         <SheetContent side="top">
           <nav className="grid gap-6 text-lg font-medium">
             <SheetClose asChild>
-              <Link
-                href="/"
-                className="flex items-center gap-2 text-lg font-semibold"
-              >
+              <Link href="/" className="flex items-center gap-2 text-lg font-semibold">
                 <CupSoda className="h-6 w-6" />
                 <span className="sr-only">Home</span>
               </Link>
@@ -41,32 +29,23 @@ const MobileNav = () => {
               </Link>
             </SheetClose>
             <SheetClose asChild>
-              <Link
-                href="/codeforces"
-                className="text-zinc-200 hover:text-indigo-200"
-              >
+              <Link href="/codeforces" className="text-zinc-200 hover:text-indigo-200">
                 Codeforces
               </Link>
             </SheetClose>
             <SheetClose asChild>
-              <Link
-                href="/projects"
-                className="text-zinc-200 hover:text-indigo-200"
-              >
+              <Link href="/projects" className="text-zinc-200 hover:text-indigo-200">
                 Projects
               </Link>
             </SheetClose>
             <SheetClose asChild>
-              <Link
-                href="/about"
-                className="text-zinc-200 hover:text-indigo-200"
-              >
+              <Link href="/about" className="text-zinc-200 hover:text-indigo-200">
                 About
               </Link>
-            </SheetClose>     
+            </SheetClose>
           </nav>
         </SheetContent>
-      </Sheet>     
+      </Sheet>
     </>
   )
 }
