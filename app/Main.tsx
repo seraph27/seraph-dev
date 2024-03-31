@@ -1,13 +1,12 @@
-"use client"
+'use client'
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import YoutubeEmbed from '@/components/VideoEmbed'
 import { AnimatedText } from '@/components/AnimatedText'
-import { Button } from "@/components/shadcn/button"
+import { Button } from '@/components/shadcn/button'
 import React from 'react'
-import ReactDOM from 'react-dom'
 import Snowfall from 'react-snowfall'
 
 const MAX_DISPLAY = 4
@@ -19,9 +18,9 @@ export default function Home({ posts }) {
         <Snowfall
           snowflakeCount={150}
           radius={[0.5, 1]}
-          wind={[0.5, 1.5]}     
-          speed={[.5, 1.5]}  
-          color='#C9C1E6'
+          wind={[0.5, 1.5]}
+          speed={[0.5, 1.5]}
+          color="#C9C1E6"
           style={{
             position: 'fixed',
             width: '100vw',
@@ -29,8 +28,7 @@ export default function Home({ posts }) {
           }}
         />
         <div className="space-y-2 pb-8 pt-40 md:space-y-5">
-          <h1 className="text-2xl font-extrabold leading-9 text-gray-900 dark:text-indigo-200 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-          </h1>
+          <h1 className="text-2xl font-extrabold leading-9 text-gray-900 dark:text-indigo-200 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"></h1>
           <div className="pb-4">
             <AnimatedText />
           </div>
@@ -38,7 +36,7 @@ export default function Home({ posts }) {
           {/* <p className="text-xl leading-7 text-gray-500 dark:text-zinc-400">
             {siteMetadata.description}
           </p> */}
-          {/* <iframe src="https://plicy.net/GameEmbed/155561" width="900" height="450">漢字でGO!</iframe> */} 
+          {/* <iframe src="https://plicy.net/GameEmbed/155561" width="900" height="450">漢字でGO!</iframe> */}
         </div>
         <ul className="divide-y divide-dashed divide-indigo-600 dark:divide-zinc-600">
           {!posts.length && 'No posts found.'}
@@ -57,7 +55,7 @@ export default function Home({ posts }) {
                     <div className="space-y-5 xl:col-span-3">
                       <div className="space-y-6">
                         <div>
-                          <h2 className="text-3xl font-bold leading-8 pb-1">
+                          <h2 className="pb-1 text-3xl font-bold leading-8">
                             <Link
                               href={`/blog/${slug}`}
                               className="text-gray-900 dark:text-indigo-200"
@@ -95,7 +93,7 @@ export default function Home({ posts }) {
       {/* end of blog posts */}
       <div>
         <img
-          className="mx-auto h-auto transition-all duration-1000 rounded-lg cursor-pointer filter grayscale hover:grayscale-0"
+          className="mx-auto h-auto cursor-pointer rounded-lg grayscale filter transition-all duration-1000 hover:grayscale-0"
           src="/static/images/bg2.png"
           alt="description"
         />
