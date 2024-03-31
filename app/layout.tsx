@@ -10,6 +10,7 @@ import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
+import './globals.css'
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -86,8 +87,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <body className="bg-slate-200 text-black antialiased dark:bg-seraph dark:text-white">  
-      {/* bg color */}
+      <body className="bg-slate-200 text-black antialiased dark:bg-seraph dark:text-white">
+        {/* bg color */}
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
