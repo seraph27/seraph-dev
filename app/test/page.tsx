@@ -1,17 +1,24 @@
-import { Redis } from '@upstash/redis'
-
-const redis = Redis.fromEnv()
+'use client'
+import { useEffect, useState } from 'react'
+import { RequestView } from 'app/blog/[...slug]/request-view'
+import { slug } from 'github-slugger'
 
 export const revalidate = 0 // disable cache
 
-export default async function Home() {
-  const member = await redis.srandmember<string>('nextjs13')
+export default function Home() {
+  const [views, setViews] = useState(null)
 
+  useEffect(() => {
+    fetch(`/api/page-visit?slug=${encodeURIComponent("test")}`)
+      .then((response) => response.json())
+      .then((data) => setViews(data.viewCnt.toString()))
+      .catch((error) => console.error(error))
+  })
   return (
     <div className="mt-40">
       <main>
-        <h1>Welcome {member}</h1>
-        <p>You have been randomly chosen by the redis algorithm.</p>
+        <RequestView slug='test' />
+        <h1>WE HAVE {views} views !!!!!</h1>
       </main>
     </div>
   )

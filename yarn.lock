@@ -5817,6 +5817,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^16.4.5":
+  version: 16.4.5
+  resolution: "dotenv@npm:16.4.5"
+  checksum: 301a12c3d44fd49888b74eb9ccf9f07a1f5df43f489e7fcb89647a2edcd84c42d6bc349dc8df099cd18f07c35c7b04685c1a4f3e6a6a9e6b30f8d48c15b7f49c
+  languageName: node
+  linkType: hard
+
 "dotenv@npm:^8.2.0":
   version: 8.6.0
   resolution: "dotenv@npm:8.6.0"
@@ -12154,6 +12161,7 @@ __metadata:
     cmdk: ^0.2.1
     contentlayer: 0.3.4
     cross-env: ^7.0.3
+    dotenv: ^16.4.5
     esbuild: 0.18.11
     eslint: ^8.45.0
     eslint-config-next: 14.1.0

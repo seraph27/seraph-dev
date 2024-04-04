@@ -33,6 +33,7 @@
     "clsx": "^2.1.0",
     "cmdk": "^0.2.1",
     "contentlayer": "0.3.4",
+    "dotenv": "^16.4.5",
     "esbuild": "0.18.11",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.2",
