@@ -10,6 +10,42 @@ type CodeForcesData = {
 
 const codeforcesData: CodeForcesData[] = [
   {
+    id: '0000040',
+    solved: true,
+    date: '2024/4/7',
+    difficulty: 2100,
+    problems: 'OpenStreetMap',
+    url: 'https://codeforces.com/contest/1195/problem/E',
+    resources: 'Codeforces',
+  },
+  {
+    id: '0000039',
+    solved: true,
+    date: '2024/4/6',
+    difficulty: 0,
+    problems: 'Minimum Cost Walk in Weighted Graph',
+    url: 'https://leetcode.com/problems/minimum-cost-walk-in-weighted-graph/description/',
+    resources: 'Leetcode',
+  },
+  {
+    id: '0000038',
+    solved: true,
+    date: '2024/4/5',
+    difficulty: 1600,
+    problems: 'Rudolf and k Bridges',
+    url: 'https://codeforces.com/contest/1941/problem/E',
+    resources: 'Codeforces',
+  },
+  {
+    id: '0000037',
+    solved: true,
+    date: '2024/4/5',
+    difficulty: 1600,
+    problems: 'Tree Cutting',
+    url: 'https://codeforces.com/contest/1946/problem/C',
+    resources: 'Codeforces',
+  },
+  {
     id: '0000036',
     solved: true,
     date: '2024/4/1',

@@ -17,8 +17,8 @@ export function AnimatedText() {
       backSpeed: 10,
       backDelay: 2000,
       loop: true,
-      showCursor: true,
-      cursorChar: '|',
+      showCursor: false,
+      cursorChar: '',
       shuffle: true,
     }
 
@@ -28,5 +28,10 @@ export function AnimatedText() {
     }
   }, [])
 
-  return <span className="text-2xl leading-7 text-zinc-700 dark:text-indigo-300" ref={el}></span>
+  return (
+    <span
+      className="flex h-12 text-2xl leading-7 text-zinc-700 dark:text-indigo-300"
+      ref={el}
+    ></span>
+  )
 }

@@ -23,7 +23,7 @@ export function ControlPanelItems() {
   const toggleSnowfall = () => {
     setSnowfall({
       ...snowfall,
-      snowflakeCount: snowfall.snowflakeCount === 0 ? 150 : 0
+      snowflakeCount: snowfall.snowflakeCount === 0 ? 150 : 0,
     })
     return snowfall.snowflakeCount === 0 ? false : true
   }
@@ -42,7 +42,7 @@ export function ControlPanelItems() {
           height: '100vh',
         }}
       />
-      <CommandPanel onPressedChange={toggleSnowfall} />
+      <CommandPanel onPressedChange={toggleSnowfall} /> 
     </div>
   )
 }
