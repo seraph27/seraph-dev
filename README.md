@@ -1,5 +1,5 @@
 ![bg](/public/static/images/bg.jpg)
-
+[![CodeFactor](https://www.codefactor.io/repository/github/seraph27/seraph-dev/badge)](https://www.codefactor.io/repository/github/seraph27/seraph-dev)
 # seraph.dev personal website
 
 [![commit activity](https://img.shields.io/github/commit-activity/w/Seraph27/seraph-dev)](https://github.com/Seraph27/seraph-dev)
