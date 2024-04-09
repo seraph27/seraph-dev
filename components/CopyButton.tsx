@@ -11,6 +11,7 @@ const CopyIcon = ({ copied }) => (
 )
 
 const CopyButton = ({ onClick, copied, hovered }) => (
+    
     <button
         aria-label="Copy code"
         type="button"

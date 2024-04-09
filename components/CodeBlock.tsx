@@ -1,6 +1,6 @@
 'use client'
 
-//( most code taken from @enscribe on github.. credits to him) 
+//( most code taken from @enscribe on github.. credits to him)
 
 import { getLanguageIcon } from '@/scripts/utils/language-icons'
 import React, { FC, useEffect, useRef, useState } from 'react'
@@ -62,8 +62,7 @@ const CodeBlock: FC<CodeBlockProps> = ({
   const { code, loading } = useFetchData(src)
   const textInput = useRef(null)
   const [hovered, onEnter, onExit] = useHover()
-  const [copied, onCopy] = useCopy(textInput)
-
+  const [copied, onCopy] = useCopy(code)
   const preStyles: React.CSSProperties = {
     ...(scrollable ? { maxHeight: '500px', overflowY: 'auto' } : {}),
     ...(terminal ? { backgroundColor: '#111' } : {}),
@@ -181,6 +180,7 @@ const CodeBlock: FC<CodeBlockProps> = ({
               </div>
             </div>
           ) : null}
+          {!terminal && <CopyButton onClick={onCopy} copied={copied} hovered={hovered} />}
           {rawHTML ? (
             <pre style={preStyles}>
               <code>
@@ -204,7 +204,6 @@ const CodeBlock: FC<CodeBlockProps> = ({
               {code}
             </SyntaxHighlighter>
           )}
-          {!terminal && <CopyButton onClick={onCopy} copied={copied} hovered={hovered} />}
         </>
       )}
     </div>
@@ -249,14 +248,14 @@ const useHover = (): [
   return [hovered, onEnter, onExit]
 }
 
-const useCopy = (textInput) => {
+const useCopy = (code) => {
   const [copied, setCopied] = useState(false)
   const onCopy = () => {
-    setCopied(true)
-    navigator.clipboard.writeText(textInput.current.textContent)
-    setTimeout(() => {
-      setCopied(false)
-    }, 2000)
+      setCopied(true)
+      navigator.clipboard.writeText(code)
+      setTimeout(() => {
+          setCopied(false)
+      }, 2000)
   }
   return [copied, onCopy]
 }
