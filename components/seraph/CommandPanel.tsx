@@ -22,8 +22,8 @@ const CommandPanel: React.FC<CommandPanelProps> = ({ onPressedChange }) => {
     <div className="relative inline-flex rounded-lg">
       <Popover>
         <PopoverTrigger>
-          <Button className="h-20 w-20 items-center rounded-lg border" size="icon" variant="ghost">
-            <Cog className="h-[60px] w-[60px] text-gray-500" />
+          <Button size="icon" variant="ghost">
+            <Cog className="h-8 w-8 text-gray-500" />
           </Button>
         </PopoverTrigger>
         <div>
@@ -34,7 +34,7 @@ const CommandPanel: React.FC<CommandPanelProps> = ({ onPressedChange }) => {
           >
             <div className="grid h-auto w-auto grid-cols-2 grid-rows-1 gap-1 p-1">
               <Toggle
-                className="rounded-md hover:bg-zinc-600 "
+                className="rounded-md"
                 onClick={() => togglePress(0)}
                 defaultPressed={isToggled[0]}
                 onPressedChange={onPressedChange}
@@ -42,7 +42,7 @@ const CommandPanel: React.FC<CommandPanelProps> = ({ onPressedChange }) => {
                 <Snowflake className="text-blue-200" />
               </Toggle>
               <Toggle
-                className="rounded-md hover:bg-zinc-600 "
+                className="rounded-md"
                 onClick={() => togglePress(1)}
                 defaultPressed={isToggled[1]}
               >

@@ -10,12 +10,12 @@ export function AnimatedText() {
       strings: [
         '🦞 Welcome to seraph.dev! 🦞',
         '☄️ Powered by Next.js and Tailwind CSS ☄️ ',
-        '✨ My favorite music artists are Vaundy, Dazbee, LV.4, Heize ✨',
-        '🔥 Some of my hobbies are: competitive programming, gymming ,rhythm games and visual novels 🔥',
+        '✨ My favorite music artists are Vaundy, Dazbee, LV.4 and Heize ✨',
+        '🔥 Some of my hobbies are: competitive programming, gymming, rhythm games and visual novels 🔥',
       ],
-      typeSpeed: 37,
-      backSpeed: 10,
-      backDelay: 2000,
+      typeSpeed: 55,
+      backSpeed: 20,
+      backDelay: 3000,
       loop: true,
       showCursor: false,
       cursorChar: '',
@@ -30,7 +30,7 @@ export function AnimatedText() {
 
   return (
     <span
-      className="flex h-12 text-2xl leading-7 text-zinc-700 dark:text-indigo-300"
+      className="flex text-lg box-border min-h-28 sm:text-2xl leading-7 text-zinc-700 dark:text-indigo-300 place-items-center"
       ref={el}
     ></span>
   )

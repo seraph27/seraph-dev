@@ -7,10 +7,11 @@ import Link from './Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import SearchButton from './SearchButton'
+import { ControlPanelItems } from './seraph/CommandPanelItems'
 
 const Header = () => {
   return (
-    <header className={"fixed max-w-5xl mx-auto -mt-1 max-h-20 flex items-center bg-slate-200 dark:bg-transparent justify-between z-40 inset-1 pr-1 backdrop-blur-sm"}>
+    <header className={"fixed max-w-5xl mx-auto -mt-1 max-h-20 flex items-center bg-slate-200 dark:bg-transparent justify-between z-[1000] inset-1 pr-1 backdrop-blur-sm"}>
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
@@ -36,8 +37,9 @@ const Header = () => {
             </Link>
           ))}
         <MobileNav />
+        {/* <ControlPanelItems /> */}
         <SearchButton />
-        <ThemeSwitch />
+        {/* <ThemeSwitch /> very broken, most likely will stick to 1 theme */}
       </div>
     </header>
   )

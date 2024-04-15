@@ -3,7 +3,7 @@ import type { Authors } from 'contentlayer/generated'
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
 import { Button } from '@/components/shadcn/button'
-
+import { AnimatedText } from '@/components/AnimatedText'
 import { Scroll, ScrollText } from 'lucide-react'
 import Link from 'next/link'
 
@@ -20,13 +20,16 @@ export default function AuthorLayout({ children, content }: Props) {
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pb-8 pt-32 md:space-y-5">
-          <h2 className="flex justify-center text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-teal-200 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h2 className="flex justify-center text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-indigo-200 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             About
           </h2>
+          <div className="flex place-items-center text-sm sm:text-">
+            <AnimatedText />
+          </div>
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-4 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center text-wrap">
-            <h3 className="pb-8 pt-10 text-3xl font-bold leading-8 tracking-tight text-gray-700 dark:text-teal-200">
+            <h3 className="pb-8 pt-10 text-3xl font-bold leading-8 tracking-tight text-gray-700 dark:text-indigo-200">
               {name}
             </h3>
             <div className="space-x-2 pb-8">
