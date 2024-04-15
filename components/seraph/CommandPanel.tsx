@@ -10,7 +10,7 @@ interface CommandPanelProps {
 }
 
 const CommandPanel: React.FC<CommandPanelProps> = ({ onPressedChange }) => {
-  const [isToggled, setIsToggled] = useState(new Array(5).fill(false).fill(true, 0, 1))
+  const [isToggled, setIsToggled] = useState(new Array(5).fill(false))
   const togglePress = (index: number) => {
     setIsToggled((prevState) => {
       const newState = [...prevState]
@@ -21,7 +21,7 @@ const CommandPanel: React.FC<CommandPanelProps> = ({ onPressedChange }) => {
   return (
     <div className="relative inline-flex rounded-lg">
       <Popover>
-        <PopoverTrigger>
+        <PopoverTrigger asChild>
           <Button size="icon" variant="ghost">
             <Cog className="h-8 w-8 text-gray-500" />
           </Button>
@@ -48,22 +48,6 @@ const CommandPanel: React.FC<CommandPanelProps> = ({ onPressedChange }) => {
               >
                 <CloudHail className="text-slate-200" />
               </Toggle>
-              {/* <Button className="rounded-md" size="icon" variant="ghost">
-                <BellIcon className="h-5 w-5" />
-                <span className="sr-only">Bell</span>
-              </Button>
-              <Button className="rounded-md" size="icon" variant="ghost">
-                <BookIcon className="h-5 w-5" />
-                <span className="sr-only">Book</span>
-              </Button>
-              <Button className="rounded-md" size="icon" variant="ghost">
-                <BookmarkIcon className="h-5 w-5" />
-                <span className="sr-only">Bookmark</span>
-              </Button>
-              <Button className="rounded-md" size="icon" variant="ghost">
-                <BoxIcon className="h-5 w-5" />
-                <span className="sr-only">Box</span>
-              </Button>  */}
             </div>
           </PopoverContent>
         </div>

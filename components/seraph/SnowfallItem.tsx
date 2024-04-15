@@ -11,9 +11,9 @@ interface SnowfallState {
   color: string
 }
 
-export function ControlPanelItems() {
+export function SnowfallItem() {
   const [snowfall, setSnowfall] = useState<SnowfallState>({
-    snowflakeCount: 150,
+    snowflakeCount: 0,
     radius: [0.5, 1],
     wind: [0.5, 1.5],
     speed: [0.5, 1.5],
