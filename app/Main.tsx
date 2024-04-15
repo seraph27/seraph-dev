@@ -25,7 +25,7 @@ export default function Home({ posts }) {
               <li key={slug} className="py-10">
                 <div className="flex w-full justify-center gap-1">
                   <Link href={`/blog/${slug}`}>
-                    <div className="grid-cols-1 grid-rows-2 items-start pointer-events-auto grid w-full sm:grid-rows-1 sm:grid-cols-5 sm:items-center gap-2 rounded-3xl border-[0.5px] border-zinc-900 hover:bg-zinc-900">
+                    <div className="z-[40] bg-seraph grid-cols-1 grid-rows-2 items-start pointer-events-auto grid w-full sm:grid-rows-1 sm:grid-cols-5 sm:items-center gap-2 rounded-3xl border-[0.5px] border-zinc-900 hover:bg-zinc-900">
                       <div className="sm:col-span-2 flex sm:justify-center col-span-1 row-span-1 row-start-1 col-start-1 justify-start z-[40]">
                         <Image
                           alt="LOL"
