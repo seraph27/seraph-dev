@@ -40,6 +40,7 @@ export function ControlPanelItems() {
           position: 'fixed',
           width: '100vw',
           height: '100vh',
+          zIndex: 30,
         }}
       />
       <CommandPanel onPressedChange={toggleSnowfall} /> 
