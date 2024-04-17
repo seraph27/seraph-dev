@@ -10,6 +10,24 @@ type CodeForcesData = {
 
 const codeforcesData: CodeForcesData[] = [
   {
+    id: '0000042',
+    solved: true,
+    date: '2024/4/8',
+    difficulty: 1500,
+    problems: 'Nearly Shortest Repeating Substring',
+    url: 'https://codeforces.com/contest/1950/problem/E',
+    resources: 'Codeforces',
+  },
+  {
+    id: '0000041',
+    solved: true,
+    date: '2024/4/8',
+    difficulty: 1700,
+    problems: 'Binary Search',
+    url: 'https://codeforces.com/contest/1945/problem/E',
+    resources: 'Codeforces',
+  },
+  {
     id: '0000040',
     solved: true,
     date: '2024/4/7',

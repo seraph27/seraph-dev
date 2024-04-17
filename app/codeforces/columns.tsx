@@ -133,7 +133,7 @@ export const columns: ColumnDef<Problem>[] = [
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel className="text-zinc-400">Actions</DropdownMenuLabel>
+            <DropdownMenuLabel className="text-indigo-200">Actions</DropdownMenuLabel>
             <DropdownMenuItem onClick={() => window.open(problem.url)}>
               Show Problem
             </DropdownMenuItem>

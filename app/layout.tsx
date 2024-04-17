@@ -1,7 +1,7 @@
 import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
 
-import { Space_Grotesk, Montserrat, Ubuntu_Mono } from 'next/font/google'
+import { Space_Grotesk, Montserrat, Ubuntu_Mono, JetBrains_Mono, Roboto_Mono } from 'next/font/google'
 // import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
 import Header from '@/components/Header'
@@ -29,8 +29,9 @@ const ubuntu_mono = Ubuntu_Mono({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-montserrat',
+  variable: '--font-ubuntu-mono',
 })
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),

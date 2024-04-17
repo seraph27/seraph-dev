@@ -22,8 +22,8 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['var(--font-montserrat)', ...fontFamily.sans],
-        mono: ['var(--ubuntu-mono)', ...fontFamily.mono],
+        sans: ['var(--font-ubuntu-mono)', ...fontFamily.sans],
+        mono: ['var(--font-ubuntu-mono)', ...fontFamily.mono],
       },
       colors: {
         primary: colors.pink,

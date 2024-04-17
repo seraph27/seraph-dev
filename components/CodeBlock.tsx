@@ -174,7 +174,7 @@ const CodeBlock: FC<CodeBlockProps> = ({
                 {title && <span className="mr-8 text-sm text-indigo-200">{title}</span>}
                 {id && (
                   <span className="mr-8 text-sm text-indigo-200">
-                    Difficulty: {codeforcesData[codeforcesData.length - id].difficulty}
+                    Difficulty: {codeforcesData[codeforcesData.length - id].difficulty == 0 ? "N/A" : codeforcesData[codeforcesData.length - id].difficulty == 0}
                   </span>
                 )}
               </div>
