@@ -10,6 +10,87 @@ type CodeForcesData = {
 
 const codeforcesData: CodeForcesData[] = [
   {
+    id: "0000051",
+    solved: true,
+    date: "2024/4/27",
+    difficulty: 1700,
+    problems: "Running Miles",
+    url: "https://codeforces.com/contest/1826/problem/D",
+    resources: "Codeforces"
+  },
+  {
+    id: "0000050",
+    solved: true,
+    date: "2024/4/26",
+    difficulty: 0,
+    problems: "Haybale Stacking",
+    url: "https://usaco.org/index.php?page=viewproblem2&cpid=104",
+    resources: "USACO"
+  },
+  {
+    id: "0000049",
+    solved: true,
+    date: "2024/4/25",
+    difficulty: 0,
+    problems: "Icy Perimeter",
+    url: "https://usaco.org/index.php?page=viewproblem2&cpid=895",
+    resources: "USACO"
+  },
+  {
+    id: "0000048",
+    solved: true,
+    date: "2024/4/25",
+    difficulty: 0,
+    problems: "The Great Revegetation",
+    url: "https://usaco.org/index.php?page=viewproblem2&cpid=920",
+    resources: "USACO"
+  },
+  {
+    id: "0000047",
+    solved: true,
+    date: "2024/4/22",
+    difficulty: 0,
+    problems: "Flight Discount",
+    url: "https://cses.fi/problemset/task/1195",
+    resources: "CSES"
+  },
+  {
+    id: "0000046",
+    solved: true,
+    date: "2024/4/21",
+    difficulty: 2000,
+    problems: "Shortest Path",
+    url: "https://codeforces.com/problemset/problem/59/E",
+    resources: "Codeforces"
+  },
+  {
+    id: "0000045",
+    solved: true,
+    date: "2024/4/20",
+    difficulty: 0,
+    problems: "Shortest Routes I",
+    url: "https://cses.fi/problemset/task/1671/",
+    resources: "CSES"
+  },
+  {
+    id: "0000044",
+    solved: true,
+    date: "2024/4/15",
+    difficulty: 0,
+    problems: "Prime Multiples",
+    url: "https://cses.fi/problemset/task/2185",
+    resources: "CSES"
+  },
+  {
+    id: "0000043",
+    solved: true,
+    date: "2024/4/15",
+    difficulty: 1500,
+    problems: "Sushi",
+    url: "https://atcoder.jp/contests/dp/tasks/dp_j",
+    resources: "AtCoder"
+  },
+  {
     id: '0000042',
     solved: true,
     date: '2024/4/8',
