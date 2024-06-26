@@ -33,7 +33,7 @@ export default function AuthorLayout({ children, content }: Props) {
               {name}
             </h3>
             <div className="space-x-2 pb-8">
-              {selfie && (
+              {selfie && ( //change in default.mdx
                 <Image
                   src={selfie}
                   alt="selfie"
