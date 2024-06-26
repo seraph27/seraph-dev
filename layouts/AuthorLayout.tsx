@@ -100,7 +100,7 @@ export default function AuthorLayout({ children, content }: Props) {
             </div>
             <div className="mt-10 flex flex-wrap justify-center">
               <Button asChild variant="outline">
-                <Link href="https://emerald-vannie-95.tiiny.site/">
+                <Link href="https://beige-bernita-6.tiiny.site/">
                   <ScrollText className="mr-2 h-4 w-4" /> Download my resume!
                 </Link>
               </Button>
