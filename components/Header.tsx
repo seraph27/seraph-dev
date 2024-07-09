@@ -36,14 +36,14 @@ const Header = () => {
               {link.title}
             </Link>
           ))}
-        {/* snowfall by default is z-50 (why?) so now my nav is z-50, front layout is z-40, and snowfall is z-30 */}
-        <div className="z-50">
+        {/* snowfall by default is z-50 (why?) all blog post have z-100, mobile-top have z-150 */}
+        <div className="z-[150]">
           <MobileNav />
         </div>
         <div className="">
           <SnowfallItem/> 
         </div>
-        <SearchButton />
+        {/* <SearchButton /> */}
         {/* <ThemeSwitch /> very broken, most likely will stick to 1 theme */}
       </div>
     </header>

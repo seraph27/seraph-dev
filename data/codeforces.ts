@@ -10,6 +10,78 @@ type CodeForcesData = {
 
 const codeforcesData: CodeForcesData[] = [
   {
+    id: "0000059",
+    solved: true,
+    date: "2024/5/9",
+    difficulty: 0,
+    problems: "Running Miles",
+    url: "https://cses.fi/problemset/task/1084",
+    resources: "CSES"
+  },
+  {
+    id: "0000058",
+    solved: true,
+    date: "2024/5/6",
+    difficulty: 0,
+    problems: "",
+    url: "https://codeforces.com/contest/1924/problem/A",
+    resources: "Codeforces"
+  },
+  {
+    id: "0000057",
+    solved: true,
+    date: "2024/5/5",
+    difficulty: 0,
+    problems: "",
+    url: "https://codeforces.com/contest/1966/problem/C",
+    resources: "Codeforces"
+  },
+  {
+    id: "0000056",
+    solved: true,
+    date: "2024/5/4",
+    difficulty: 0,
+    problems: "",
+    url: "https://codeforces.com/contest/1918/problem/C",
+    resources: "Codeforces"
+  },
+  {
+    id: "0000055",
+    solved: true,
+    date: "2024/4/30",
+    difficulty: 0,
+    problems: "",
+    url: "https://calicojudge.com/public/problems/575/text",
+    resources: "Others"
+  },
+  {
+    id: "0000054",
+    solved: true,
+    date: "2024/4/28",
+    difficulty: 0,
+    problems: "",
+    url: "https://usaco.org/index.php?page=viewproblem2&cpid=1063",
+    resources: "USACO"
+  },
+  {
+    id: "0000053",
+    solved: true,
+    date: "2024/4/27",
+    difficulty: 0,
+    problems: "",
+    url: "https://leetcode.com/problems/freedom-trail/?envType=daily-question&envId=2024-04-27",
+    resources: "Leetcode"
+  },
+  {
+    id: "0000052",
+    solved: true,
+    date: "2024/4/27",
+    difficulty: 0,
+    problems: "",
+    url: "https://cses.fi/problemset/task/1652",
+    resources: "CSES"
+  },
+  {
     id: "0000051",
     solved: true,
     date: "2024/4/27",

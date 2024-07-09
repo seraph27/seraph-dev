@@ -4,12 +4,11 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import React from 'react'
-import { Badge, badgeVariants } from '@/components/shadcn/badge'
+import { Badge } from '@/components/shadcn/badge'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import { SnowfallItem } from '../components/seraph/SnowfallItem';
 
-const MAX_DISPLAY = 4
+const MAX_DISPLAY = 5
 
 export default function Home({ posts }) {
   const [isClient, setIsClient] = useState(false)
@@ -32,17 +31,17 @@ export default function Home({ posts }) {
               <li key={slug} className="py-10">
                 <div className="flex w-full justify-center gap-1">
                   <Link href={`/blog/${slug}`}>
-                    <div className="pointer-events-auto z-40 grid w-full grid-cols-1 grid-rows-2 items-start gap-2 rounded-3xl border-[0.5px] border-zinc-900 bg-seraph hover:bg-zinc-900 sm:grid-cols-5 sm:grid-rows-1 sm:items-center">
-                      <div className="z-[40] col-span-1 col-start-1 row-span-1 row-start-1 flex justify-start sm:col-span-2 sm:justify-center">
+                    <div className="pointer-events-auto z-[100] grid w-full grid-cols-1 grid-rows-2 items-start gap-2 rounded-3xl border-[0.5px] border-zinc-900 bg-seraph hover:bg-zinc-900 sm:grid-cols-5 sm:grid-rows-1 sm:items-center">
+                      <div className="z-[100] col-span-1 col-start-1 row-span-1 row-start-1 flex justify-start sm:col-span-2 sm:justify-center">
                         <Image
                           alt="LOL"
                           src={images[0]}
-                          width={500}
-                          height={500}
+                          width={1920}
+                          height={1080}
                           style={{ borderRadius: '1.5rem' }}
                         />
                       </div>
-                      <div className="z-[40] col-span-1 row-span-1 mx-4 mt-2 p-4 sm:col-span-3 sm:my-6 sm:p-0">
+                      <div className="z-[100] col-span-1 row-span-1 mx-4 mt-2 p-4 sm:col-span-3 sm:my-6 sm:p-0">
                         <div className="text-base font-medium leading-6 text-gray-500 dark:text-zinc-400 ">
                           <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                         </div>

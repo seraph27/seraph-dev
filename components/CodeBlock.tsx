@@ -46,7 +46,6 @@ interface CodeBlockProps {
 const CodeBlock: FC<CodeBlockProps> = ({
   src,
   title,
-  id = 0,
   range,
   fileName,
   language = 'text',
@@ -164,7 +163,7 @@ const CodeBlock: FC<CodeBlockProps> = ({
         </div>
       ) : (
         <>
-          {fileName || title || id ? (
+          {fileName || title ? (
             <div className="align-center flex justify-between gap-3 px-3 py-1">
               <div className="hidden items-center gap-2 rounded-md bg-seraph px-2 py-1 text-[13px] hover:bg-zinc-900 md:flex">
                 {getLanguageIcon(language)}
@@ -172,11 +171,6 @@ const CodeBlock: FC<CodeBlockProps> = ({
               </div>
               <div className="flex items-center">
                 {title && <span className="mr-8 text-sm text-indigo-200">{title}</span>}
-                {id && (
-                  <span className="mr-8 text-sm text-indigo-200">
-                    Difficulty: {codeforcesData[codeforcesData.length - id].difficulty == 0 ? "N/A" : codeforcesData[codeforcesData.length - id].difficulty == 0}
-                  </span>
-                )}
               </div>
             </div>
           ) : null}

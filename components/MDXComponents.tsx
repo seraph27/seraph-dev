@@ -7,6 +7,7 @@ import CustomLink from './Link'
 import TableWrapper from './TableWrapper'
 import ChangeLogList from './seraph/ChangeLogList'
 import CodeBlock from './CodeBlock'
+import CustomImage from './seraph/CustomImage'
 
 export const components: MDXComponents = {
   Image,
@@ -17,4 +18,5 @@ export const components: MDXComponents = {
   BlogNewsletterForm,
   ChangeLogList,
   CodeBlock,
+  CustomImage,
 }
