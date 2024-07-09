@@ -1,76 +1,169 @@
 ---
-title: 'Summer Internship Week 1'
+title: 'Binary Classification of Insurance Cross Selling'
 date: '2024-7-1'
 tags: ['python', 'internship']
-draft: true
-summary: 'a log for summer internship'
+draft: false
+summary: 'Summer internship week 1 log'
 images: ['/static/images/thumbnails/kaggle.png']
 layout: PostSimple
 canonicalUrl:
 ---
 
-Notes and summary of week 1 of my summer internship systex & google: The first part of my summer internship will be based in Systex (精誠資訊) with a focus on AI tools. 
-In the first week, I refreshed my knowledge on python and AI (supervised training) by starting a contest on [Kaggle](https://www.kaggle.com/code/sarahhh123/logistic-regression). 
+Summary of week 1 during my joint summer internship @ systex & google: The first part of my summer internship 
+will be based at Systex (精誠資訊) with a focus on AI tools and application in the medical field. 
+In the first week, I refreshed my knowledge on python and AI (supervised training) by starting a contest on 
+[Kaggle](https://www.kaggle.com/competitions/playground-series-s4e7). 
 
-The goal of this competition is given a dataset, predict which customers respond positively to an automobile insurance offer.
-
-### EDA
+The goal of this competition is given a dataset, predict which customers respond positively to an automobile 
+insurance offer. The [dataset](https://www.kaggle.com/competitions/playground-series-s4e7/data?select=train.csv) for 
+this contest is around 11 million lines long.
+## EDA
 <CodeBlock
   src="other/test"
   language="python"
   scrollable
   skipLines={[[1, 6], [14, 18], [21, 25], [27, 31], [33, 37], [40, 44], [48, 52], [55, 65], [72, 76], [83, 87], [94, 302]]}
-  fileName="test.py"
-  title="Kaggle contest"
+  fileName="insurance.py"
+  title="EDA"
 />
 
 EDA stands for exploratory data analysis. Essentally before the process of modifying our data / train the model, we want to know certain values about our dataset, such as its shape, distributions of certain features etc..
-This will help with feature engineering and gives me a better idea of what the data I'm working with look like
+This will help with feature engineering and gives me a better idea of what the data I'm working with look like.
 
 <CustomImage
   imgSrc="/static/images/intern/wk1/output.png"
 />
----
 <CustomImage
   imgSrc="/static/images/intern/wk1/output2.png"
 />
----
 <CustomImage
   imgSrc="/static/images/intern/wk1/output3.png"
 />
 
-### Checking for inbalanced results
+---
+
+## Checking for Inbalanced Results
 <CodeBlock
   src="other/test"
-  language="py"
+  language="python"
   scrollable
   skipLines={[[1, 109], [116, 201], [207, 302]]}
-  fileName="test.py"
-  title="Kaggle contest"
+  fileName="insurance.py"
+  title="Inbalanced Sampling"
 />
 
-> As 
-
-### reading the file
+Output:
+```txt {2, 5}
+0    10089739
+1     1415059
+Name: Response, dtype: int64
+0    10089739
+1    10089739
+Name: Response, dtype: int64
 ```
-df = pd.read_csv("data/train.csv")
-df.head(5)
+
+As we can see, in our training data, there is an overwhelming amount of 0 values over 1. This can cause biases for the model, 
+so we use [SMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) 
+to generate samples to counteract the inbalance.
+
+---
+
+## Feature Selection
+<CodeBlock
+  src="other/test"
+  language="python"
+  scrollable
+  skipLines={[[1, 120], [130, 142], [145, 149], [153, 159], [165, 175], [181, 185], [188, 192], [197, 302]]}
+  fileName="insurance.py"
+  title="Feature Selection"
+/>
+
+<CustomImage
+  imgSrc="/static/images/intern/wk1/output5.png"
+  width="900"
+  height="900"
+/>
+
+By looking at the correlation matrix, we can drop features such as `Driving License` because it has little 
+to no correlation (p < 0.05) to our target feature (Response).
+
+We also want to transform categorical data such as Gender into 0 and 1s, so the model can process them.
+
+---
+
+## Preprocessing Data
+<CodeBlock
+  src="other/test"
+  language="python"
+  scrollable
+  skipLines={[[1, 217], [223, 233], [237, 302]]}
+  fileName="insurance.py"
+  title="Preprocessing data"
+/>
+
+We use sklearn's [StandardScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)
+feature to help us "standardize features by removing the mean and scaling to unit variance". 
+
+It normalizes each feature / column 
+with the following formula such that each column has `μ = 0` and `σ = 1`.
+$$
+\begin{aligned}
+z = \frac{x - \mu}{\sigma}
+\end{aligned}
+$$
+
+---
+## Training the model
+<CodeBlock
+  src="other/test"
+  language="python"
+  scrollable
+  skipLines={[[1, 241]]}
+  fileName="insurance.py"
+  title="Model"
+/>
+
+For the first attempt, I used a LogisticRegression coupled with a grid search for hyperparameter optimization. In reality,
+I think catboost or XGBoost would work better but I wanted to try something new (and I have to know all of them anyways).
+
+Output:
+```txt
+accuracy_score: 79.37472455517519
+precision_score: 0.7531891271754535
+recall_score: 0.873758637005239
+roc_auc_score: 0.8802292451252265
+
+confusion_matrix:
+array([[2160781,  866551],
+       [ 382071, 2644441]], dtype=int64)
 ```
 
-```py {1} showLineNumbers
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train_smote)
-data_scaled = scaler.fit_transform(df)
-inference_scaled = scaler.fit_transform(X_test)
-```
-optuna for hyperparameters
-https://optuna.org/
+Here the AUC score is quite high in my opinion, but in reality when tested against the entire test data on Kaggle,
+it is not that high, suggesting the possibility of overfitting or other biases. The confusion matrix also shows that there 
+are a lot of false positives (866551).
 
-first model using logistic regression
+First submission:
+<CustomImage
+  imgSrc="/static/images/intern/wk1/submission.png"
+  width="900"
+/>
+---
 
-https://lightautoml.readthedocs.io/en/latest/pages/tutorials/Tutorial_1_basics.html
+## Other tools
 
-## feature importance 
-https://stackoverflow.com/questions/34052115/how-to-find-the-importance-of-the-features-for-a-logistic-regression-model
-shap
+The plan for week 2 is to continue doing this contest, but alongside other tasks. Probably going to try a different model
+such as **catboost** and see if I can improve the score. Overall it's been a fruitful week and I've learned a lot on the
+non-technical side too, joining in meetings and making new connections.
+
+
+These are some new tools that I was made aware of this week, thanks to my mentor:
+
+[LightAutoML](https://lightautoml.readthedocs.io/en/latest/pages/tutorials/Tutorial_1_basics.html) for tabular data training
+
+[This](https://stackoverflow.com/questions/34052115/how-to-find-the-importance-of-the-features-for-a-logistic-regression-model) for finding feature importance on a logistic regression
+
+[Optuna](https://optuna.org/) for hyperparameter optimization
+
+[Shap](https://shap.readthedocs.io/en/latest/) for feature engineering and analysis
+
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
