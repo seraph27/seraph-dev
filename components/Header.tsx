@@ -11,14 +11,14 @@ import { SnowfallItem } from './seraph/SnowfallItem'
 
 const Header = () => {
   return (
-    <header className={"mx-auto z-50 fixed max-w-7xl -mt-1 max-h-20 flex items-center bg-slate-200 dark:bg-transparent justify-between inset-1 pr-1 backdrop-blur-sm"}>
+    <header className={"mx-auto z-[100] fixed max-w-7xl -mt-1 max-h-20 flex items-center bg-slate-200 dark:bg-transparent justify-between inset-1 pr-1 backdrop-blur-sm"}>
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
             <div className="mr-3">
               <Logo />
             </div>
-            <div className="hidden h-6 text-3xl font-semibold sm:block text-purple-900 dark:text-purple-200">
+            <div className="z-[100] hidden h-6 text-3xl font-semibold sm:block text-purple-900 dark:text-purple-200">
               {siteMetadata.headerTitle}
             </div>
           </div>
@@ -36,13 +36,9 @@ const Header = () => {
               {link.title}
             </Link>
           ))}
-        {/* snowfall by default is z-50 (why?) all blog post have z-100, mobile-top have z-150 */}
-        <div className="z-[150]">
+        {/* everything else have z-50 headers / mobile-top have z-100 */}
           <MobileNav />
-        </div>
-        <div className="">
-          <SnowfallItem/> 
-        </div>
+          <SnowfallItem/>
         {/* <SearchButton /> */}
         {/* <ThemeSwitch /> very broken, most likely will stick to 1 theme */}
       </div>
