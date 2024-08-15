@@ -3,7 +3,7 @@ const siteMetadata = {
   title: 'seraph-dev',
   author: 'seraph',
   headerTitle: 'seraph-dev',
-  description: 'just another webdev journey',
+  description: 'my personal competitive programming & webdev blog ',
   language: 'en-us',
   theme: 'dark', // system, dark or light
   siteUrl: 'https://seraph-dev.vercel.app/',
@@ -13,12 +13,12 @@ const siteMetadata = {
   // mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'ychao@ucsd.edu',
   github: 'https://github.com/Seraph27',
-  // twitter: 'https://twitter.com/Twitter',
+  twitter: 'https://x.com/seraph100791?t=M3s5KgsIS3qGmS1hjyexvQ',
   // facebook: 'https://facebook.com',
-  youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
+  youtube: 'https://www.youtube.com/watch?v=xvFZjo5PgG0',
+  linkedin: 'https://www.linkedin.com/in/rexchao/',
   // threads: 'https://www.threads.net',
-  instagram: 'https://www.instagram.com',
+  //instagram: 'https://www.instagram.com',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
