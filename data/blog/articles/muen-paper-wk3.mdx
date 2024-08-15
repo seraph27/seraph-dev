@@ -10,24 +10,81 @@ canonicalUrl:
 ---
 
 ## Overview
+
 During my internship week 2 and 3, I had the pleasure to take on two more tasks. The first one being building
-a small website, with a text-to-text functionality that incoperates OpenAI API, which is the focus of this blog. 
+a small website, with a text-to-text functionality that incoperates OpenAI API, which is the focus of this blog.
 
 The second being a research project on AI application, with a focus on AI image prediction at National Taiwan University Hospital.
 The goal of the second project is to predict liver tumors and nodules with DICOM images from CT scans, which I will explain further
-in the next blog. 
+in the next blog.
 
 ---
+
 ## What is the purpose of this tool?
-The goal of this small project is a simple lookup tool. An user can input an arbitary scientific paper, then it will feed 
+
+The goal of this small project is a simple lookup tool. An user can input an arbitary scientific paper, then it will feed
 this text into chatGPT for keywords, then using a pre-populated lookup table from 4 different database websites, we will query
 "names" that matches the most keywords.
 
-First, the [final product](https://muen-paper.vercel.app/). The website is simply an interface that makes it easy for users to interact with 
-the script. Most of the complexities are within the script / backend. I will explain the backend and frontend seperately.
+First, the [final product](https://muen-paper.vercel.app/). The website is simply an interface that makes it easy for users to interact with
+the script. Most of the complexities are within the script / backend.
+
+### Tech stack
+
+<ReusableTable
+  caption="A list of technologies used to build this project"
+  headers={[{ label: 'Category', className: 'font-bold text-lg'}, { label: 'Technology Name', className: 'font-bold text-lg'}]}
+  data={[
+    {
+      category: 'Framework',
+      technologyName: {
+        text: 'Next.js',
+        link: 'https://nextjs.org/',
+      },
+    },
+    {
+      category: 'Backend',
+      technologyName: {
+        text: 'Python',
+        link: 'https://www.python.org/',
+      },
+    },
+    {
+      category: 'Backend Framework',
+      technologyName: {
+        text: 'Flask',
+        link: 'https://flask.palletsprojects.com/en/3.0.x/',
+      },
+    },
+    {
+      category: 'AI',
+      technologyName: {
+        text: 'OpenAI',
+        link: 'https://openai.com/index/openai-api/',
+      },
+    },
+    {
+      category: 'UI Styling',
+      technologyName: {
+        text: 'Tailwind CSS',
+        link: 'https://tailwindcss.com',
+      },
+    },
+    {
+      category: 'Components',
+      technologyName: {
+        text: 'shadcn/ui',
+        link: 'https://ui.shadcn.com/',
+      },
+    },
+  ]}
+  maxWidth="600px"
+/>
 
 ---
+
 ## Backend
+
 The backend is not too complicated at all. It consists of two parts: a web-scraper for scraping the following 4 websites, and
 a dictionary builder and query that allows processing of these data. These are written with **python**.
 
@@ -40,11 +97,10 @@ Department of Research Planning and Development - [國衛院院外計畫](https:
 National Digital Library of Theses and Dissertations in Taiwan - [臺灣博碩士論文知識加值系統](https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/ccd=g.YSvx/webmge?mode=basic)
 
 ---
+
 Let's use the GRB site as an example:
-<CustomImage
-  imgSrc="/static/images/intern/wk2/site.png"
-  width="900"
-/>
+
+<CustomImage imgSrc="/static/images/intern/wk2/site.png" width="900" />
 
 Originally, my first observation was that there is no API for any of these websites. The database is also not publically available.
 And the text cannot be interaacted with, unless you manually click on pages. This means beautiful soup isn't possible, and I leaned
@@ -62,32 +118,30 @@ towards using selenium. Our goal is to scrape 3 things: names, keywords, and tit
 The problems are immediate. Take the GRB website for example, there seems to be some sort of anti-bot protection, or just in general
 a request cooldown. When using selenium to click, it will buffer for over 30 seconds randomly. On average, 10 pages take over 2 minutes.
 
-With a total of **674461** papers to scrape, and since a maximum of 200 results can be listed at a time, this will take over 
+With a total of **674461** papers to scrape, and since a maximum of 200 results can be listed at a time, this will take over
+
 $$
 \frac{674461}{200} \cdot 12 \cdot\frac{1}{3600} \approx 11.24 \text{ hours}
-$$ 
+$$
 
 Ok sure, I can wait 11 hours...thats alright...
-<CustomImage
-  imgSrc="/static/images/intern/wk2/fail.jpg"
-  width="600"
-/>
+
+<CustomImage imgSrc="/static/images/intern/wk2/fail.jpg" width="600" />
 
 It's not alright. Turns out there's no "page select" button on any of these websites anywhere. That means if something fails to fetch, or the internet cuts out,
 then I have to repeat the WHOLE process. This is when I realized how inefficient this method was, and I needed a better approach.
 
 ### Scraping by Post Requests
+
 I decided to search inside developer tools (F12) to see if anything happens behind the scenes when I click the buttons on the page.
 I knew there has to be some backend fetching the data from their database (to be fair this should've been the first thing I did).
 
 Sure enough, there is an API call called "searcher" in the requests list tab. It seems to contain the data that I want in json format,
 which is perfect.
-<CustomImage
-  imgSrc="/static/images/intern/wk2/searcher.png"
-  width="900"
-/>
 
-Now all I have to do is copy what the website is sending to its backend. 
+<CustomImage imgSrc="/static/images/intern/wk2/searcher.png" width="900" />
+
+Now all I have to do is copy what the website is sending to its backend.
 I sent a post request that allows me to query by page and keyword.
 
 <CodeBlock
@@ -108,7 +162,7 @@ I sent a post request that allows me to query by page and keyword.
   title="Scrape by requests"
 />
 
-With this new method, 1 page takes around 0.6s, which is very fast, and even if my code fails, 
+With this new method, 1 page takes around 0.6s, which is very fast, and even if my code fails,
 I will be able to continue querying from where I left off.
 
 <CustomImage
@@ -116,17 +170,21 @@ I will be able to continue querying from where I left off.
   width="400"
 />
 
-In total, this will now only take around 
+In total, this will now only take around
+
 $$
 \frac{674461}{200} \cdot 0.6 \cdot\frac{1}{3600} \approx 33.7 \text{ minutes}
-$$ 
+$$
+
 This is a 95% improvement over the previous method. Great success!
 
 ---
+
 ### search.py
+
 The other half of the problem isn't complicated either. After scraping the websites, the data is stored in a .json file. To achieve
-fast lookup, I simply store the keywords as dictionaries. To get the keywords for lookup, I simply feed the paper name into 
-GPT 3.5, and asks it to return 10 keywords. Then I sort the cumulative occurances that each name shows up when queried with my keywords. 
+fast lookup, I simply store the keywords as dictionaries. To get the keywords for lookup, I simply feed the paper name into
+GPT 3.5, and asks it to return 10 keywords. Then I sort the cumulative occurances that each name shows up when queried with my keywords.
 Essentially, I want to know who is most relevant in the field related to a specific paper.
 
 <CodeBlock
@@ -141,23 +199,12 @@ Essentially, I want to know who is most relevant in the field related to a speci
 ---
 
 ## Frontend
-The webpage is built with <strong>Next.js + React + Tailwind CSS</strong>, and deployed on <strong>Vercel</strong>. I wanted to try the new AI powered 
-UI generation tool from vercel called [v0.dev](https://v0.dev/ ). It was able to give me a pretty nice template to work. The difficult
+
+The webpage is built with <strong>Next.js + React + Tailwind CSS</strong>, and deployed on <strong>Vercel</strong>. I wanted to try the new AI powered
+UI generation tool from vercel called [v0.dev](https://v0.dev/). It was able to give me a pretty nice template to work. The difficult
 part is mostly hooking the UI to the backend, which I used <strong>Flask</strong> to handle API requests.
 
-<CustomImage
-  imgSrc="/static/images/intern/wk2/v0.png"
-  width="900"
-/>
+<CustomImage imgSrc="/static/images/intern/wk2/v0.png" width="900" />
 
 Since the react code isn't that important in my opinion, I will omit it for now. You can view the source code [here](https://github.com/seraph27/muen-paper).
 Hope you enjoyed reading!
-
-
-
-
-
-
-
-
-

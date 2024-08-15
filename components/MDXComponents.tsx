@@ -8,6 +8,7 @@ import TableWrapper from './TableWrapper'
 import ChangeLogList from './seraph/ChangeLogList'
 import CodeBlock from './CodeBlock'
 import CustomImage from './seraph/CustomImage'
+import { ReusableTable } from './seraph/ReusableTable';
 
 export const components: MDXComponents = {
   Image,
@@ -19,4 +20,5 @@ export const components: MDXComponents = {
   ChangeLogList,
   CodeBlock,
   CustomImage,
+  ReusableTable
 }
