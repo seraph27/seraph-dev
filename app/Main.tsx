@@ -20,15 +20,15 @@ export default function Home({ posts }) {
   return (
     <>
       <div className="">
-        <div className="space-y-2 pb-8 pt-24 md:space-y-5">
+        <div className="space-y-2 pb-8 pt-20 md:space-y-5">
           <h1 className="text-2xl font-extrabold leading-9 text-gray-900 dark:text-indigo-200 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"></h1>
         </div>
-        <ul className="divide-y divide-dashed divide-indigo-600 dark:divide-zinc-600">
+        <ul className="">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags, images } = post
             return (
-              <li key={slug} className="py-10">
+              <li key={slug} className="py-6">
                 <div className="flex w-full justify-center gap-1">
                   <Link href={`/blog/${slug}`}>
                     <div className="pointer-events-auto z-50 grid w-full grid-cols-1 grid-rows-2 items-start gap-2 rounded-3xl border-[0.5px] border-zinc-900 bg-seraph hover:bg-zinc-900 sm:grid-cols-5 sm:grid-rows-1 sm:items-center">
