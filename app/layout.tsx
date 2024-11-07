@@ -13,18 +13,6 @@ import { Analytics } from "@vercel/analytics/react"
 import { Metadata } from 'next'
 import './globals.css'
 
-const space_grotesk = Space_Grotesk({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-space-grotesk',
-})
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-montserrat',
-})
-
 const ubuntu_mono = Ubuntu_Mono({
   weight: '400',
   subsets: ['latin'],
