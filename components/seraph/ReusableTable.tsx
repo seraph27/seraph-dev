@@ -41,8 +41,8 @@ export function ReusableTable({ caption, headers, data, footerData, maxWidth }) 
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data.map((row) => (
-            <TableRow>
+          {data.map((row, rowIndex) => (
+            <TableRow key={rowIndex}>
               {Object.values(row).map((cell: any, cellIndex) => (
                 <TableCell key={cellIndex} className={headers[cellIndex]?.cellClassName}>
                   {renderCell(cell)}
