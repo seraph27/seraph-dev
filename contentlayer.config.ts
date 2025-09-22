@@ -3,6 +3,7 @@ import { writeFileSync } from 'fs'
 import readingTime from 'reading-time'
 import { slug } from 'github-slugger'
 import path from 'path'
+import { fileURLToPath } from 'url'
 // Remark packages
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
@@ -23,6 +24,9 @@ import siteMetadata from './data/siteMetadata'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
 
 const root = process.cwd()
+// Fix Windows path issues
+const isWindows = process.platform === 'win32'
+const normalizePath = (p: string) => (isWindows ? p.replace(/\\/g, '/') : p)
 const isProduction = process.env.NODE_ENV === 'production'
 
 const computedFields: ComputedFields = {
@@ -117,7 +121,7 @@ export const Authors = defineDocumentType(() => ({
   fields: {
     name: { type: 'string', required: true },
     avatar: { type: 'string' },
-    selfie: { type: 'string'},
+    selfie: { type: 'string' },
     occupation: { type: 'string' },
     company: { type: 'string' },
     email: { type: 'string' },
@@ -125,8 +129,8 @@ export const Authors = defineDocumentType(() => ({
     linkedin: { type: 'string' },
     github: { type: 'string' },
     layout: { type: 'string' },
-    discord: { type: 'string'},
-    acm: { type: 'string'},
+    discord: { type: 'string' },
+    acm: { type: 'string' },
   },
   computedFields,
 }))
@@ -135,7 +139,7 @@ export default makeSource({
   contentDirPath: 'data',
   documentTypes: [Blog, Authors],
   mdx: {
-    cwd: process.cwd(),
+    cwd: normalizePath(process.cwd()),
     remarkPlugins: [
       remarkExtractFrontmatter,
       remarkGfm,
@@ -147,7 +151,7 @@ export default makeSource({
       rehypeSlug,
       rehypeAutolinkHeadings,
       rehypeKatex,
-      [rehypeCitation, { path: path.join(root, 'data') }],
+      [rehypeCitation, { path: normalizePath(path.join(root, 'data')) }],
       [rehypePrismPlus, { defaultLanguage: 'js', ignoreMissing: true }],
       rehypePresetMinify,
     ],
